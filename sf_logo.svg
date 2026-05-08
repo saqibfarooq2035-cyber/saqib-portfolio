@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8c96a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#c9a84c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a8852e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGradText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0d878;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8901e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="200" fill="#06080f"/>
+
+  <!-- Decorative thin line top -->
+  <line x1="40" y1="44" x2="160" y2="44" stroke="#c9a84c" stroke-width="0.6" opacity="0.5"/>
+  <!-- Decorative thin line bottom -->
+  <line x1="40" y1="156" x2="160" y2="156" stroke="#c9a84c" stroke-width="0.6" opacity="0.5"/>
+
+  <!-- Small corner marks -->
+  <line x1="40" y1="44" x2="40" y2="54" stroke="#c9a84c" stroke-width="0.8" opacity="0.6"/>
+  <line x1="160" y1="44" x2="160" y2="54" stroke="#c9a84c" stroke-width="0.8" opacity="0.6"/>
+  <line x1="40" y1="156" x2="40" y2="146" stroke="#c9a84c" stroke-width="0.8" opacity="0.6"/>
+  <line x1="160" y1="156" x2="160" y2="146" stroke="#c9a84c" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- SF Letters using elegant serif paths -->
+  <text
+    x="100"
+    y="130"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="96"
+    font-weight="700"
+    font-style="italic"
+    fill="url(#goldGradText)"
+    letter-spacing="-4"
+  >SF</text>
+
+  <!-- Subtle glow layer -->
+  <text
+    x="100"
+    y="130"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="96"
+    font-weight="700"
+    font-style="italic"
+    fill="none"
+    stroke="#e8c96a"
+    stroke-width="0.4"
+    opacity="0.3"
+    letter-spacing="-4"
+  >SF</text>
+</svg>
