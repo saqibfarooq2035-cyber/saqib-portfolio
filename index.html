@@ -182,15 +182,35 @@ nav {
 }
 .hero-title {
   font-size: 18px; color: var(--muted); font-weight: 300;
-  margin-bottom: 32px; max-width: 500px;
+  margin-bottom: 20px; max-width: 500px;
   opacity: 0; transform: translateY(20px);
   animation: fadeUpIn 0.7s ease 1.2s forwards;
 }
 .hero-title strong { color: var(--text); font-weight: 500; }
+
+/* ── HERO SUMMARY ── */
+.hero-summary {
+  font-size: 15px;
+  color: #8a8f9e;
+  font-weight: 300;
+  line-height: 1.85;
+  max-width: 520px;
+  margin-bottom: 36px;
+  border-left: 2px solid rgba(201,168,76,0.35);
+  padding-left: 18px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpIn 0.7s ease 1.3s forwards;
+}
+.hero-summary strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .hero-stats {
   display: flex; gap: 40px; margin-bottom: 44px;
   opacity: 0;
-  animation: fadeUpIn 0.7s ease 1.35s forwards;
+  animation: fadeUpIn 0.7s ease 1.45s forwards;
 }
 .stat-num {
   font-family: 'Cormorant Garamond', serif;
@@ -200,7 +220,7 @@ nav {
 .hero-btns {
   display: flex; gap: 16px; flex-wrap: wrap;
   opacity: 0;
-  animation: fadeUpIn 0.7s ease 1.5s forwards;
+  animation: fadeUpIn 0.7s ease 1.6s forwards;
 }
 @keyframes slideInLeft {
   to { opacity: 1; transform: translateX(0); }
@@ -582,9 +602,7 @@ footer span { color: var(--gold); }
 .stagger-children.visible > *:nth-child(6) { transition-delay: 0.5s; }
 
 /* Count up numbers */
-.count-num {
-  display: inline-block;
-}
+.count-num { display: inline-block; }
 
 /* ── GOLD SHINE TEXT ── */
 .shine-text {
@@ -634,6 +652,7 @@ footer span { color: var(--gold); }
   .skills-wrapper { grid-template-columns: 1fr; }
   .hero-stats { gap: 24px; }
   .edu-item { grid-template-columns: 1fr; gap: 8px; }
+  .hero-summary { font-size: 14px; }
 }
 </style>
 </head>
@@ -674,6 +693,17 @@ footer span { color: var(--gold); }
       <strong>Project Manager</strong> · Software Engineer · Business Analyst<br/>
       ClickUp · Jira · Notion Expert based in Islamabad, Pakistan
     </p>
+
+    <p class="hero-summary">
+      Results-driven PM with a <strong>BS in Software Engineering</strong> and hands-on
+      experience delivering <strong>15+ concurrent software projects</strong> with a
+      100% on-time record. I turn chaotic workflows into clean, automated systems —
+      specialising in <strong>ClickUp, Jira &amp; Notion</strong> setups that teams
+      actually adopt. Currently leading cross-functional teams of <strong>25+ members</strong>
+      at DevSphere Technologies while taking on selective freelance clients across
+      project delivery, PMO setup, and workflow automation.
+    </p>
+
     <div class="hero-stats">
       <div>
         <div class="stat-num"><span class="count-num" data-target="2">0</span>+</div>
@@ -1128,9 +1158,7 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
 class Particle {
-  constructor() {
-    this.reset();
-  }
+  constructor() { this.reset(); }
   reset() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
@@ -1145,9 +1173,7 @@ class Particle {
   update() {
     this.x += this.vx;
     this.y += this.vy;
-    if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-      this.reset();
-    }
+    if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
   }
   draw() {
     ctx.beginPath();
@@ -1187,11 +1213,7 @@ animateParticles();
 
 /* ── SCROLL ANIMATIONS ── */
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-    }
-  });
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.08 });
 
 document.querySelectorAll('.fade-up, .fade-left, .fade-right, .stagger-children').forEach(el => observer.observe(el));
@@ -1244,7 +1266,6 @@ function switchTab(tabId, btn) {
   const panel = document.getElementById(tabId);
   panel.classList.add('active');
   btn.classList.add('active');
-  // Animate items in
   panel.querySelectorAll('.exp-item').forEach((item, i) => {
     item.style.opacity = '0';
     item.style.transform = 'translateY(20px)';
@@ -1261,9 +1282,7 @@ const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {
   let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 200) current = s.id;
-  });
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.id; });
   navLinks.forEach(a => {
     a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
   });
@@ -1277,9 +1296,7 @@ document.querySelectorAll('.btn-primary, .btn-outline, .nav-cta').forEach(btn =>
     const y = e.clientY - rect.top - rect.height / 2;
     btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) translateY(-3px)`;
   });
-  btn.addEventListener('mouseleave', () => {
-    btn.style.transform = '';
-  });
+  btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
 });
 </script>
 </body>
